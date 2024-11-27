@@ -20,6 +20,8 @@ public class PersonService {
     public Person getPersonByEmployeeId(String employeeId) {
         // fetch data from a database in future lab
         // For simplicity, we return a dummy person here
+        String repsonse=paymentClient.EmployeeId(employeeId)+"done";
+        System.out.println(repsonse);
         return new Person();
     }
 }
