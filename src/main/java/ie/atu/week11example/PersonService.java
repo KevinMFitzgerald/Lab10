@@ -6,22 +6,24 @@ import org.springframework.stereotype.Service;
 public class PersonService {
     // Placeholder method to save a person (add to Db in the next two weeks)
     private PaymentClient paymentClient;
+    private EmployeeClient employeeClient;
     public void savePerson(Person person) {
         System.out.println("Person saved: " + person);
         String repsonse=paymentClient.makePayment(person);
         System.out.println(repsonse);
     }
 
-    public PersonService(PaymentClient paymentClient) {
+    public PersonService(PaymentClient paymentClient, EmployeeClient employeeClient) {
         this.paymentClient = paymentClient;
+        this.employeeClient = employeeClient;
     }
 
     // Placeholder method to retrieve a person by employeeId
     public Person getPersonByEmployeeId(String employeeId) {
         // fetch data from a database in future lab
         // For simplicity, we return a dummy person here
-        String repsonse=paymentClient.EmployeeId(employeeId)+"done";
-        System.out.println(repsonse);
+        String response=employeeClient.getEmployeeById(employeeId)+"done";
+        System.out.println("Employye response: " + response);
         return new Person();
     }
 }

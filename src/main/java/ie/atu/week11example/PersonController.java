@@ -17,7 +17,7 @@ public class PersonController {
     @GetMapping("/{employeeId}")
     public ResponseEntity<?> getPerson(@PathVariable String employeeId) {
         if (employeeId.length() > 5 || employeeId.isBlank()) {
-            return ResponseEntity.badRequest().body("EmployeeId is invalid");
+            return ResponseEntity.badRequest().body("getEmployeeById is invalid");
         }
 
         Person person = personService.getPersonByEmployeeId(employeeId);
